@@ -21,7 +21,6 @@ import java.io.IOException;
 public class DoctorLoginController {
     private DoctorService doctorService;
 
-    private int n;
 
     @FXML
     public TextField passwordField;
