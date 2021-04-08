@@ -43,7 +43,7 @@ public class CardiologistApplicationMain extends Application {
 
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("view/HomePage.fxml"));
         primaryStage.setTitle("Cardiologist Application");
-        primaryStage.setScene(new Scene(root, 589, 432));
+        primaryStage.setScene(new Scene(root, 576, 432));
         primaryStage.show();
     }
 }
