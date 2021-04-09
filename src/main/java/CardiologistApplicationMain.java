@@ -5,8 +5,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
-/*public class CardiologistApplicationMain extends Application {
+/*
+public class CardiologistApplicationMain extends Application {
     private Stage primaryStage;
     //private BorderPane mainLayout;
 
@@ -16,7 +16,7 @@ import java.io.IOException;
         this.primaryStage.setTitle("Cardiologist Appointment Application");
     }
 
-    private void showHomePage() throws IOException{
+    private void start() throws IOException{
 
         Parent root = FXMLLoader.load(CardiologistApplicationMain.class.getResource("view/HomePage.fxml"));
         Scene scene = new Scene(root);
@@ -27,8 +27,8 @@ import java.io.IOException;
     public static void main(String[] args){
         launch(args);
     }
-}*/
-
+}
+*/
 public class CardiologistApplicationMain extends Application {
 
     public static void main(String[] args)
@@ -46,4 +46,8 @@ public class CardiologistApplicationMain extends Application {
         primaryStage.setScene(new Scene(root, 576, 432));
         primaryStage.show();
     }
+
+//    public static void main(String[] args){
+//        launch(args);
+//    }
 }
