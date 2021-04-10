@@ -27,7 +27,7 @@ public class PatientRegisterController {
     @FXML
     private Text messageField;
 
-    @FXML
+    /*@FXML
     public void goToPatientLogin(ActionEvent event) throws IOException {
 
         Parent view = FXMLLoader.load(getClass().getClassLoader().getResource("view/PatientLogin.fxml"));
@@ -38,7 +38,7 @@ public class PatientRegisterController {
         window.setScene(view2);
         window.show();
 
-    }
+    }*/
 
     @FXML
     public void gotoUserRegister(ActionEvent event) throws IOException {

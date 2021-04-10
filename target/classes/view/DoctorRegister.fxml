@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="view.DoctorRegister"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="429.0" prefWidth="574.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DoctorRegisterController">
 
+    <children>
+        <TextField layoutX="382.0" layoutY="123.0" />
+        <PasswordField layoutX="382.0" layoutY="190.0" />
+        <Label layoutX="311.0" layoutY="127.0" prefHeight="17.0" prefWidth="60.0" text="Username:" textFill="#ff2323" />
+        <Label layoutX="311.0" layoutY="194.0" text="Password:" textFill="#ff2323" />
+        <ImageView fitHeight="226.0" fitWidth="189.0" layoutX="29.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true" style="-fx-blend-mode: white;">
+            <image>
+                <Image url="@doctor.jpg" />
+            </image>
+        </ImageView>
+        <Button layoutX="508.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToUserRegister" text="Return" textFill="#ff2323">
+            <effect>
+                <Glow />
+            </effect>
+        </Button>
+        <Button layoutX="404.0" layoutY="268.0" mnemonicParsing="false" onAction="#registerButtonAction" prefHeight="38.0" prefWidth="105.0" text="Register" textFill="#ff2323">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <effect>
+                <Glow />
+            </effect>
+        </Button>
+    </children>
 </AnchorPane>
