@@ -5,13 +5,14 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.layout.VBox;
-import org.json.JSONArray;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+
 
 import org.json.simple.parser.ParseException;
 import service.JsonParser;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
+
 
 
 import java.io.IOException;
@@ -22,15 +23,16 @@ import java.util.ResourceBundle;
 public class CitiesListController implements Initializable {
     @FXML
     public VBox cities;
-    public JsonParser jsonParser;
+    private JsonParser jsonParser;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             jsonParser = new JsonParser();
             JSONObject obj = jsonParser.parse("/datastorage/cities.json");
-            JSONArray cities = (JSONArray) obj.get("Cities_List");
-            Iterator it = cities.iterator();
+            JSONArray cities_list = (JSONArray) obj.get("Cities_List");
+
+            Iterator it = cities_list.iterator();
 
             while (it.hasNext()) {
                 String element = (String) it.next();
@@ -40,8 +42,8 @@ public class CitiesListController implements Initializable {
                 b.setMaxWidth(Double.MAX_VALUE);
                 b.setText(element);
                 b.setAlignment(Pos.CENTER);
-                b.setStyle("-fx-background-color: plum; -fx-background-radius: 15px; -fx-text-fill: black");
-                cities.getChildren().add(b);
+                b.setStyle("-fx-background-color: white; -fx-background-radius: 100px; -fx-text-fill: #ff2323");
+                cities.getChildren().add(new Button());
             }
 
         } catch (IOException | ParseException e) {

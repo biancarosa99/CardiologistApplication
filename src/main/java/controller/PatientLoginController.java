@@ -73,4 +73,6 @@ public class PatientLoginController {
         window.setScene(view2);
         window.show();
     }
+
+
 }
