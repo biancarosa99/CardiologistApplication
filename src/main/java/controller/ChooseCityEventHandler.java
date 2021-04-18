@@ -21,7 +21,7 @@ public class ChooseCityEventHandler implements EventHandler<ActionEvent> {
     public void handle(ActionEvent event) {
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/HomePage.fxm;"));
+            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/HomePage.fxml"));
             Parent view = loader.load();
             Scene view2 = new Scene(view);
 

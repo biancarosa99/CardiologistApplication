@@ -42,8 +42,8 @@ public class CitiesListController implements Initializable {
                 b.setMaxWidth(Double.MAX_VALUE);
                 b.setText(element);
                 b.setAlignment(Pos.CENTER);
-                b.setStyle("-fx-background-color: white; -fx-background-radius: 100px; -fx-text-fill: #ff2323");
-                cities.getChildren().add(new Button());
+                b.setStyle("-fx-background-color: white; -fx-background-radius: 15px; -fx-text-fill: #ff2323");
+                cities.getChildren().add(b);
             }
 
         } catch (IOException | ParseException e) {
