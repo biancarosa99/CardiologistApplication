@@ -3,6 +3,7 @@ package controller;
 import exceptions.EmptyPasswordException;
 import exceptions.EmptyUsernameException;
 import exceptions.UsernameAlreadyExistsException;
+import javafx.collections.transformation.TransformationList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,7 +28,7 @@ public class PatientRegisterController {
     @FXML
     private Text messageField;
 
-    /*@FXML
+    @FXML
     public void goToPatientLogin(ActionEvent event) throws IOException {
 
         Parent view = FXMLLoader.load(getClass().getClassLoader().getResource("view/PatientLogin.fxml"));
@@ -38,7 +39,8 @@ public class PatientRegisterController {
         window.setScene(view2);
         window.show();
 
-    }*/
+    }
+
 
     @FXML
     public void gotoUserRegister(ActionEvent event) throws IOException {
@@ -52,13 +54,14 @@ public class PatientRegisterController {
         window.show();
 
     }
-
-    public void registerButtonAction() {
-
+    
+    @FXML
+    public void registerButtonAction()  {
         try {
 
             PatientService.addPatient(usernameField.getText(), passwordField.getText());
             messageField.setText("Account created successfully!");
+            
         } catch (UsernameAlreadyExistsException | EmptyPasswordException | EmptyUsernameException e) {
 
             messageField.setText(e.getMessage());

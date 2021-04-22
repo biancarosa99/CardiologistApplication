@@ -34,7 +34,7 @@ public class DoctorRegisterController {
         doctorService = new DoctorService();
     }
 
-   /* @FXML
+    @FXML
     public void goToDoctorLogin(ActionEvent event) throws IOException {
 
         Parent view = FXMLLoader.load(getClass().getClassLoader().getResource("view/DoctorLogin.fxml"));
@@ -45,7 +45,7 @@ public class DoctorRegisterController {
         window.setScene(view2);
         window.show();
 
-    }*/
+    }
 
     @FXML
     public void goToUserRegister(ActionEvent event) throws IOException {

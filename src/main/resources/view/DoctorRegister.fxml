@@ -22,7 +22,7 @@
                 <Image url="@doctor.jpg" />
             </image>
         </ImageView>
-        <Button layoutX="508.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToUserRegister" text="Return" textFill="#ff2323">
+        <Button layoutX="495.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToUserRegister" text="Return" textFill="#ff2323">
             <effect>
                 <Glow />
             </effect>
@@ -53,5 +53,10 @@
             </children>
         </GridPane>
       <Text fx:id="messageField" layoutX="220.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert your credentials" wrappingWidth="164.80340576171875" />
+      <Button layoutX="417.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToDoctorLogin" prefHeight="31.0" prefWidth="65.0" text="Login" textFill="#ff2323" AnchorPane.bottomAnchor="384.0" AnchorPane.leftAnchor="417.0" AnchorPane.rightAnchor="92.0" AnchorPane.topAnchor="14.0">
+         <effect>
+            <Glow />
+         </effect>
+      </Button>
     </children>
 </AnchorPane>

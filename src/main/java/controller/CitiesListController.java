@@ -1,10 +1,15 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -25,6 +30,17 @@ public class CitiesListController implements Initializable {
     public VBox cities;
     private JsonParser jsonParser;
 
+    @FXML
+    public void goBack(ActionEvent event) throws IOException {
+
+        Parent view = FXMLLoader.load(getClass().getClassLoader().getResource("view/PatientLogin.fxml"));
+        Scene view2 = new Scene(view);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(view2);
+        window.show();
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
@@ -38,11 +54,10 @@ public class CitiesListController implements Initializable {
                 String element = (String) it.next();
 
                 Button b = new Button();
-                //b.setEditable(false); //makes textfield not editable
                 b.setMaxWidth(Double.MAX_VALUE);
                 b.setText(element);
                 b.setAlignment(Pos.CENTER);
-                b.setStyle("-fx-background-color: white; -fx-background-radius: 15px; -fx-text-fill: #ff2323");
+                b.setStyle("-fx-background-color: white; -fx-background-radius: 15px; -fx-text-fill: #ff2323; -fx-text-effect: Glow");
                 cities.getChildren().add(b);
             }
 
