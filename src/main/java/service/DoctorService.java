@@ -35,12 +35,16 @@ public class DoctorService {
         }
     }
 
-    public static void addDoctor(String username, String password) throws UsernameAlreadyExistsException, EmptyPasswordException, EmptyUsernameException {
+    public static void addDoctor(String username, String password, String name, String city, String price, String workingHours) throws UsernameAlreadyExistsException, EmptyPasswordException, EmptyUsernameException, EmptyNameException, EmptyCityException, EmptyPriceException, EmptyWorkingHoursException {
         loadDoctorsFromFile();
         checkDoctorDoesNotExist(username);
         checkUsernameIsNotEmpty(username);
         checkPasswordIsNotEmpty(password);
-        Doctor newDoctor = new Doctor(username, encodePassword(username, password));
+        checkNameIsNotEmpty(name);
+        checkCityIsNotEmpty(city);
+        checkPriceIsNotEmpty(price);
+        checkWorkingHoursIsNotEmpty(workingHours);
+        Doctor newDoctor = new Doctor(username, encodePassword(username, password), name, city, price, workingHours);
         doctors.add(newDoctor);
         try {
             ObjectMapper mapper = new ObjectMapper();
@@ -100,6 +104,30 @@ public class DoctorService {
             throw new EmptyPasswordException(password);
     }
 
+    private static void checkNameIsNotEmpty(String name)throws EmptyNameException {
+
+        if(Objects.equals(name, ""))
+            throw new EmptyNameException(name);
+    }
+
+    private static void checkCityIsNotEmpty(String city)throws EmptyCityException {
+
+        if(Objects.equals(city, ""))
+            throw new EmptyCityException(city);
+    }
+
+    private static void checkPriceIsNotEmpty(String price)throws EmptyPriceException {
+
+        if(Objects.equals(price, ""))
+            throw new EmptyPriceException(price);
+    }
+
+    private static void checkWorkingHoursIsNotEmpty(String workingHours)throws EmptyWorkingHoursException {
+
+        if(Objects.equals(workingHours, ""))
+            throw new EmptyWorkingHoursException(workingHours);
+    }
+
 
     private static String encodePassword(String salt, String password) {
 
@@ -112,6 +140,8 @@ public class DoctorService {
         return new String(hashedPassword, StandardCharsets.UTF_8)
                 .replace("\"", ""); //to be able to save in JSON format
     }
+
+
 
     private static MessageDigest getMessageDigest() {
 

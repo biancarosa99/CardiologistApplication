@@ -28,7 +28,10 @@ public class ChooseCityEventHandler implements EventHandler<ActionEvent> {
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
             window.setScene(view2);
+
+
             CitiesListController controller = loader.getController();
+
             City city = new City();
             city.setCityName(((Button)event.getTarget()).getText());
             //controller.init();

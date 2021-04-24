@@ -10,9 +10,7 @@ public class City {
         return cityName.get();
     }
 
-    public StringProperty cityNameProperty() {
-        return cityName;
-    }
+    public StringProperty cityNameProperty() { return cityName; }
 
     public void setCityName(String cityName) {
         this.cityName.set(cityName);

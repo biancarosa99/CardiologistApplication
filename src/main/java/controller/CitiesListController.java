@@ -67,9 +67,21 @@ public class CitiesListController implements Initializable {
 
         for(Node i: cities.getChildren()) {
             Button b = (Button) i;
-            b.setOnAction(new ChooseCityEventHandler());
+            //b.setOnAction(new ChooseCityEventHandler());
         }
 
+    }
+
+    @FXML
+    public void goToDoctors(ActionEvent event) throws IOException {
+
+        Parent view = FXMLLoader.load(getClass().getClassLoader().getResource("view/DoctorsList.fxml"));
+        Scene view2 = new Scene(view);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(view2);
+        window.show();
     }
 
 

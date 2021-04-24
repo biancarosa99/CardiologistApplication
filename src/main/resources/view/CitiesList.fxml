@@ -23,11 +23,16 @@
             <Glow />
          </effect>
       </Button>
-      <ImageView fitHeight="211.0" fitWidth="272.0" layoutX="110.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="153.0" fitWidth="201.0" layoutX="146.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@map.png" />
          </image>
       </ImageView>
+      <Button layoutX="203.0" layoutY="359.0" mnemonicParsing="false" onAction="#goToDoctors" text="View Doctors List" textFill="#ff2323">
+         <effect>
+            <Glow />
+         </effect>
+      </Button>
 
     </children>
 </AnchorPane>
