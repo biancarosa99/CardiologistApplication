@@ -11,7 +11,9 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import model.City;
+import model.Doctor;
 
+import javax.print.Doc;
 import java.io.IOException;
 
 
@@ -21,7 +23,7 @@ public class ChooseCityEventHandler implements EventHandler<ActionEvent> {
     public void handle(ActionEvent event) {
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/HomePage.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/DoctorsList.fxml"));
             Parent view = loader.load();
             Scene view2 = new Scene(view);
 
@@ -29,11 +31,10 @@ public class ChooseCityEventHandler implements EventHandler<ActionEvent> {
 
             window.setScene(view2);
 
+           // DoctorsListController controller = loader.getController();
 
-            CitiesListController controller = loader.getController();
-
-            City city = new City();
-            city.setCityName(((Button)event.getTarget()).getText());
+           // Doctor doctor = new Doctor();
+           // doctor.setName(((Button)event.getTarget()).getText());
             //controller.init();
 
             window.show();

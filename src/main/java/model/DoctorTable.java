@@ -17,8 +17,6 @@ public class DoctorTable {
         this.workingHours = new SimpleStringProperty(workingHours);
     }
 
-
-
     public String getName() {
         return name.get();
     }

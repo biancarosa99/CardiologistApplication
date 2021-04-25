@@ -12,6 +12,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import model.Doctor;
+import model.DoctorTable;
 
 
 import org.json.simple.parser.ParseException;
@@ -19,16 +21,20 @@ import service.JsonParser;
 import javafx.scene.control.Button;
 
 
-
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.ResourceBundle;
 
+
 public class CitiesListController implements Initializable {
     @FXML
     public VBox cities;
     private JsonParser jsonParser;
+
 
     @FXML
     public void goBack(ActionEvent event) throws IOException {
@@ -67,7 +73,7 @@ public class CitiesListController implements Initializable {
 
         for(Node i: cities.getChildren()) {
             Button b = (Button) i;
-            //b.setOnAction(new ChooseCityEventHandler());
+            b.setOnAction(new ChooseCityEventHandler());
         }
 
     }
@@ -82,7 +88,7 @@ public class CitiesListController implements Initializable {
 
         window.setScene(view2);
         window.show();
-    }
 
+    }
 
 }

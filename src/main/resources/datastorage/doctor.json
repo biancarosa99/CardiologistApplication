@@ -1,8 +1,9 @@
-[ {
-  "username" : "doctor3",
-  "password" : "zJ\\��9�\u0014}�'\u0003�,����\u0002\u0015;�T�������`\u001C բ祉\u001A�M���g!gs���\u000F=�'�\u000B\u0000�\u0006��",
-  "name" : "Ionescu",
-  "city" : "Arad",
-  "price" : "100",
-  "workingHours" : "8-17"
-} ]
+[{
+  "username": "doctor3",
+  "password": "zJ\\��9�\u0014}�'\u0003�,����\u0002\u0015;�T�������`\u001C բ祉\u001A�M���g!gs���\u000F=�'�\u000B\u0000�\u0006��",
+  "name": "Ionescu",
+  "city": "Arad",
+  "price": "100",
+  "workingHours": "8-17"
+}]
+

@@ -11,7 +11,6 @@ public class Doctor {
     public Doctor() {}
 
 
-
     public Doctor(String username, String password, String name, String city, String price, String workingHours) {
         this.username=username;
         this.password=password;

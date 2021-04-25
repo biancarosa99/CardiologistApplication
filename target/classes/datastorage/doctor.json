@@ -1,20 +1,9 @@
-{
-  "Doctors_List": [
-    {
-      "username": "doctor2",
-      "password": "\u0016�1\\������\u001A99_R\u001D��b\u001Dx��1�`����(L��\u0007��3ԭ�0��ɲ�1�f�H\u0006���\u0013��9BH�",
-      "name": "Popescu Mihai",
-      "city": "Timisoara",
-      "price": "150",
-      "workingHours": "8-17"
-    },
-    {
-      "username": "doctor",
-      "password": "ze�R\u0012�zR�\u0001wtqu��\u001A��Ƚ\u0000I?��ݣ6c锟�^�(\b�s������\u0000hJ��P�Ϟ\u0006�\u0001/;#lG",
-      "name": "Popescu Ion",
-      "city": "Arad",
-      "price": "100",
-      "workingHours": "8-17"
-    }
-  ]
-}
+[{
+  "username": "doctor3",
+  "password": "zJ\\��9�\u0014}�'\u0003�,����\u0002\u0015;�T�������`\u001C բ祉\u001A�M���g!gs���\u000F=�'�\u000B\u0000�\u0006��",
+  "name": "Ionescu",
+  "city": "Arad",
+  "price": "100",
+  "workingHours": "8-17"
+}]
+
