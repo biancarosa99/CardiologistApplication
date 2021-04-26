@@ -25,19 +25,6 @@ public class PatientLoginController {
     @FXML
     private PasswordField passwordField;
 
-
-//    @FXML
-//    public void goToPatientLogin(ActionEvent event) throws IOException {
-//
-//        Parent view = FXMLLoader.load(getClass().getClassLoader().getResource("view/PatientLogin.fxml"));
-//        Scene view2 = new Scene(view);
-//
-//        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-//
-//        window.setScene(view2);
-//        window.show();
-//
-//    }
     @FXML
     public void loginButtonAction(ActionEvent event) throws IOException, WrongPasswordException, WrongUsernameException, EmptyPasswordException, EmptyUsernameException {
         try {

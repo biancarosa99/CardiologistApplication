@@ -8,32 +8,22 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import model.City;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import model.Doctor;
-import model.DoctorTable;
-
-
 import org.json.simple.parser.ParseException;
 import service.JsonParser;
-import javafx.scene.control.Button;
 
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.ResourceBundle;
 
-
-public class CitiesListController implements Initializable {
+public class DoctorNameController implements Initializable {
     @FXML
-    public VBox cities;
+    public VBox doctorName;
     private JsonParser jsonParser;
 
 
@@ -53,10 +43,10 @@ public class CitiesListController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             jsonParser = new JsonParser();
-            JSONObject obj = jsonParser.parse("/datastorage/cities.json");
-            JSONArray cities_list = (JSONArray) obj.get("Cities_List");
+            JSONObject obj = jsonParser.parse("/datastorage/doctorNames.json");
+            JSONArray doctor_names_list = (JSONArray) obj.get("Doctor_Names");
 
-            Iterator it = cities_list.iterator();
+            Iterator it = doctor_names_list.iterator();
 
             while (it.hasNext()) {
                 String element = (String) it.next();
@@ -66,37 +56,17 @@ public class CitiesListController implements Initializable {
                 b.setText(element);
                 b.setAlignment(Pos.CENTER);
                 b.setStyle("-fx-background-color: white; -fx-background-radius: 15px; -fx-text-fill: #ff2323; -fx-text-effect: Glow");
-                cities.getChildren().add(b);
+                doctorName.getChildren().add(b);
             }
 
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
 
-        for (Node i : cities.getChildren()) {
+        for (Node i : doctorName.getChildren()) {
             Button b = (Button) i;
-            b.setOnAction(new ChooseCityEventHandler());
+            b.setOnAction(new ChooseDoctorEventHandler());
         }
 
-    }
-
-    @FXML
-
-    public void goToDoctors(ActionEvent event)  {
-        try{
-
-        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/DoctorNameList.fxml"));
-        Parent view = loader.load();
-        Scene view2 = new Scene(view);
-
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-        window.setScene(view2);
-
-        window.show();
-
-        }catch (IOException ex){
-            ex.printStackTrace();
-        }
     }
 }

@@ -1,30 +1,25 @@
 package controller;
 
-import javafx.event.Event;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import javafx.event.ActionEvent;
 import model.City;
-import model.Doctor;
 import model.DoctorTable;
+import model.DoctorsName;
 
-import javax.print.Doc;
 import java.io.IOException;
 
-
-public class ChooseCityEventHandler implements EventHandler<ActionEvent> {
-
+public class ChooseDoctorEventHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent event) {
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/DoctorsList.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/DoctorsSchedule.fxml"));
             Parent view = loader.load();
             Scene view2 = new Scene(view);
 
@@ -32,12 +27,15 @@ public class ChooseCityEventHandler implements EventHandler<ActionEvent> {
 
             window.setScene(view2);
 
-            DoctorsListController controller = loader.getController();
-            City city= new City();
-            city.setCityName(((Button)event.getTarget()).getText());
-            controller.init(city);
-            window.show();
+            DoctorNameListController controller = loader.getController();
 
+            DoctorsName doctorsName= new DoctorsName();
+
+            doctorsName.setDoctorName(((Button)event.getTarget()).getText());
+
+            controller.init(doctorsName);
+
+            window.show();
         } catch (IOException ex){
             ex.printStackTrace();
         }

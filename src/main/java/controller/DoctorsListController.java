@@ -35,12 +35,8 @@ public class DoctorsListController {
     @FXML
     public TableView<DoctorTable> table;
     public javafx.scene.control.TableColumn<DoctorTable, String> prName;
-    public javafx.scene.control.TableColumn<DoctorTable, String> prCity;
     public javafx.scene.control.TableColumn<DoctorTable, String> prPrice;
     public javafx.scene.control.TableColumn<DoctorTable, String> prWorkingHours;
-    public TableColumn prConfirm;
-
-    List<DoctorTable> doctorList = new ArrayList<>();
 
     private JsonParser jsonParser;
 
@@ -65,60 +61,18 @@ public class DoctorsListController {
 
             Iterator<Object> it = doctors.iterator();
 
-            List<DoctorTable> prList = new ArrayList<DoctorTable>();
+            List<DoctorTable> prList = new ArrayList<>();
             while (it.hasNext()) {
                 JSONObject getDoctor = (JSONObject) it.next();
-                prList.add(new DoctorTable(getDoctor.get("name").toString(), (String) getDoctor.get("city"), getDoctor.get("price").toString(), getDoctor.get("workingHours").toString()));
-                //prList.add(new DoctorTable(getDoctor.get("name").toString(), (String) getDoctor.get("city"), getDoctor.get("price").toString(), getDoctor.get("workingHours").toString()));
+                prList.add(new DoctorTable(getDoctor.get("name").toString(),getDoctor.get("price").toString(), getDoctor.get("workingHours").toString()));
             }
 
             ObservableList<DoctorTable> data = FXCollections.observableArrayList(prList);
             table.setEditable(true);
             prName.setCellValueFactory(new PropertyValueFactory<>("name"));
-            prCity.setCellValueFactory(new PropertyValueFactory<>("city"));
             prPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
             prWorkingHours.setCellValueFactory(new PropertyValueFactory<>("workingHours"));
-            prConfirm.setCellValueFactory(new PropertyValueFactory<>(""));
 
-            Callback<TableColumn<DoctorTable, String>, TableCell<DoctorTable, String>> cellFactory =  new Callback <TableColumn<DoctorTable, String>,TableCell<DoctorTable, String>>() {
-                @Override
-                public TableCell<DoctorTable, String> call(TableColumn<DoctorTable, String> productStringTableColumn) {
-                    final TableCell<DoctorTable, String> cell = new TableCell<DoctorTable, String>() {
-
-                        final Button btn = new Button("Confirm");
-
-                        @Override
-                        public void updateItem(String item, boolean empty) {
-                            super.updateItem(item, empty);
-                            if (empty) {
-                                setGraphic(null);
-                                setText(null);
-                            } else{
-
-                                btn.setOnAction(event -> {
-                                    DoctorTable selectedDoctor= getTableView().getItems().get(getIndex());
-                                    DoctorTable doctor = new DoctorTable("","","","");
-                                    doctor.setName(selectedDoctor.getName());
-                                    doctor.setCity(selectedDoctor.getCity());
-                                    doctor.setPrice(selectedDoctor.getPrice());
-                                    doctor.setWorkingHours(selectedDoctor.getWorkingHours());
-                                    doctorList.add(doctor);
-
-                                });
-                                setGraphic(btn);
-                                btn.setStyle("-fx-background-color: papayawhip; -fx-background-radius: 15;");
-                                btn.setAlignment(Pos.CENTER);
-                                setText(null);
-                            }
-                        }
-                    };
-                    return cell;
-                }
-            };
-
-
-
-           prConfirm.setCellFactory(cellFactory);
             table.setItems(data);
 
         }catch (IOException | ParseException e) {
