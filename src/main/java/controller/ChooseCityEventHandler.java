@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import model.City;
 import model.Doctor;
+import model.DoctorTable;
 
 import javax.print.Doc;
 import java.io.IOException;
@@ -31,11 +32,11 @@ public class ChooseCityEventHandler implements EventHandler<ActionEvent> {
 
             window.setScene(view2);
 
-           // DoctorsListController controller = loader.getController();
-
-           // Doctor doctor = new Doctor();
-           // doctor.setName(((Button)event.getTarget()).getText());
-            //controller.init();
+            DoctorsListController controller = loader.getController();
+            City city= new City();
+            DoctorTable doctorTable = new DoctorTable("","","","");
+            city.setCityName(((Button)event.getTarget()).getText());
+            controller.init(city);
 
             window.show();
         } catch (IOException ex){

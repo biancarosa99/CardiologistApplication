@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import model.City;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import model.Doctor;
@@ -42,11 +43,12 @@ public class CitiesListController implements Initializable {
         Parent view = FXMLLoader.load(getClass().getClassLoader().getResource("view/PatientLogin.fxml"));
         Scene view2 = new Scene(view);
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         window.setScene(view2);
         window.show();
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
@@ -71,24 +73,54 @@ public class CitiesListController implements Initializable {
             e.printStackTrace();
         }
 
-        for(Node i: cities.getChildren()) {
+        for (Node i : cities.getChildren()) {
             Button b = (Button) i;
             b.setOnAction(new ChooseCityEventHandler());
         }
 
     }
 
-    @FXML
-    public void goToDoctors(ActionEvent event) throws IOException {
+    /*  @FXML
+      public void goToDoctors(ActionEvent event) throws IOException {
 
-        Parent view = FXMLLoader.load(getClass().getClassLoader().getResource("view/DoctorsList.fxml"));
+          Parent view = FXMLLoader.load(getClass().getClassLoader().getResource("view/DoctorsList.fxml"));
+          Scene view2 = new Scene(view);
+
+         // DoctorsListController controller = loader.getController();
+
+          Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+          window.setScene(view2);
+         // controller.init();
+          window.show();
+
+      }
+
+  }
+
+     */
+    @FXML
+
+    public void goToDoctors(ActionEvent event)  {
+        try{
+
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/DoctorsList.fxml"));
+        Parent view = loader.load();
         Scene view2 = new Scene(view);
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         window.setScene(view2);
+        DoctorsListController controller = loader.getController();
+         City city = new City();
+         city.setCityName(((Button)event.getTarget()).getText());
+            DoctorTable doctorTable = new DoctorTable("","","","");
+           // doctorTable.setName(((Button)event.getTarget()).getText());
+        controller.init(city);
+
         window.show();
-
+        }catch (IOException ex){
+            ex.printStackTrace();
+        }
     }
-
 }

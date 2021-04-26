@@ -7,15 +7,16 @@
 
 <AnchorPane prefHeight="502.0" prefWidth="973.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DoctorsListController">
    <children>
-      <TableView layoutX="78.0" layoutY="88.0" prefHeight="300.0" prefWidth="823.0">
+      <TableView fx:id="table" layoutX="78.0" layoutY="88.0" prefHeight="300.0" prefWidth="823.0">
         <columns>
           <TableColumn fx:id="prName" prefWidth="165.0" text="Name" />
           <TableColumn fx:id="prCity" prefWidth="167.0" text="City" />
-            <TableColumn fx:id="prPrice" prefWidth="163.0" text="Price" />
+            <TableColumn fx:id="prPrice" editable="false" prefWidth="163.0" text="Price" />
             <TableColumn fx:id="prWorkingHours" prefWidth="165.0" text="Working Hours" />
             <TableColumn fx:id="prConfirm" prefWidth="165.0" text="Confirm appointment" />
         </columns>
       </TableView>
       <Button layoutX="867.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBack" prefHeight="31.0" prefWidth="67.0" text="Return" />
+      <Button layoutX="800.0" layoutY="415.0" mnemonicParsing="false" text="Ok" />
    </children>
 </AnchorPane>

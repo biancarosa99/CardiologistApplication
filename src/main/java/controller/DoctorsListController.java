@@ -56,12 +56,12 @@ public class DoctorsListController {
 
     }
 
-    public void init()
+    public void init(City city)
     {
         try {
             jsonParser = new JsonParser();
-            org.json.simple.JSONObject obj = jsonParser.parse("/datastorage/doctor.json");
-            JSONArray doctors = (JSONArray) obj.get("");
+            org.json.simple.JSONObject obj = jsonParser.parse("/datastorage/doctorsList.json");
+            JSONArray doctors = (JSONArray) obj.get(city.getCityName());
 
             Iterator<Object> it = doctors.iterator();
 
@@ -69,6 +69,7 @@ public class DoctorsListController {
             while (it.hasNext()) {
                 JSONObject getDoctor = (JSONObject) it.next();
                 prList.add(new DoctorTable(getDoctor.get("name").toString(), (String) getDoctor.get("city"), getDoctor.get("price").toString(), getDoctor.get("workingHours").toString()));
+                //prList.add(new DoctorTable(getDoctor.get("name").toString(), (String) getDoctor.get("city"), getDoctor.get("price").toString(), getDoctor.get("workingHours").toString()));
             }
 
             ObservableList<DoctorTable> data = FXCollections.observableArrayList(prList);
@@ -116,7 +117,8 @@ public class DoctorsListController {
             };
 
 
-            prConfirm.setCellFactory(cellFactory);
+
+           prConfirm.setCellFactory(cellFactory);
             table.setItems(data);
 
         }catch (IOException | ParseException e) {
