@@ -74,6 +74,7 @@ public class DoctorsListController {
             prWorkingHours.setCellValueFactory(new PropertyValueFactory<>("workingHours"));
 
             table.setItems(data);
+            table.setEditable(true);
 
         }catch (IOException | ParseException e) {
             e.printStackTrace();

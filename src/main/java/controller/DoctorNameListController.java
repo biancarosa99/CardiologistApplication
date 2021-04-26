@@ -112,6 +112,7 @@ public class DoctorNameListController {
                                     appointment.setDate(chooseApp.getDate());
                                     appointment.setHour(chooseApp.getHour());
                                     appointments.add(appointment);
+                                    btn.setDisable(true);
 
                                 });
                                 setGraphic(btn);
