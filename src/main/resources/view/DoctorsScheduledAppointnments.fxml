@@ -7,12 +7,13 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewDoctorAppointmentsController">
    <children>
-      <TableView fx:id="table" layoutX="181.0" layoutY="80.0" prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="table" layoutX="192.0" layoutY="78.0" prefHeight="200.0" prefWidth="227.0">
         <columns>
+            <TableColumn fx:id="prName" prefWidth="75.0" text="Name" />
           <TableColumn fx:id="prDate" prefWidth="75.0" text="Date" />
           <TableColumn fx:id="prHour" prefWidth="75.0" text="Hour" />
         </columns>
       </TableView>
-      <Text layoutX="270.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="currentDoctor" layoutX="270.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
    </children>
 </AnchorPane>

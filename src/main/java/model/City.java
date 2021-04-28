@@ -4,7 +4,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class City {
-    private StringProperty cityName = new SimpleStringProperty("");;
+    private StringProperty cityName = new SimpleStringProperty("");
 
     public String getCityName() {
         return cityName.get();

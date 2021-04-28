@@ -13,6 +13,7 @@ import javafx.scene.text.Text;
 import javafx.util.Callback;
 import model.Appointment;
 import model.ConfirmAppointment;
+import model.DoctorsAppointments;
 import model.DoctorsName;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -29,17 +30,18 @@ public class ViewDoctorAppointmentsController {
     @FXML
     public Text currentDoctor;
     public TableView<Appointment> table;
-    public javafx.scene.control.TableColumn<Appointment, String> prDate;
-    public javafx.scene.control.TableColumn<Appointment, String> prHour;
+    public javafx.scene.control.TableColumn<DoctorsAppointments, String> prDate;
+    public javafx.scene.control.TableColumn<DoctorsAppointments, String> prHour;
+
 
 
     private JsonParser jsonParser;
 
     public void init(Appointment appointment)
     {
-        //currentDoctor.setText(doctorsName.getDoctorsName());
+
         try {
-            DoctorsName doctorsName=new DoctorsName();
+
             jsonParser = new JsonParser();
             org.json.simple.JSONObject obj = jsonParser.parse("/datastorage/appointments.json");
             JSONArray doctors = (JSONArray) obj.get("appointmentList");
@@ -52,12 +54,14 @@ public class ViewDoctorAppointmentsController {
                 JSONObject getDoctorSchedule = (JSONObject) it.next();
                 prList.add(new Appointment(getDoctorSchedule.get("date").toString(), (String) getDoctorSchedule.get("hour")));
 
+
             }
 
             ObservableList<Appointment> data = FXCollections.observableArrayList(prList);
             table.setEditable(true);
             prDate.setCellValueFactory(new PropertyValueFactory<>("date"));
             prHour.setCellValueFactory(new PropertyValueFactory<>("hour"));
+
 
 
 

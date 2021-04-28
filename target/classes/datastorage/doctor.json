@@ -1,9 +1,22 @@
-[{
-  "username": "doctor3",
-  "password": "zJ\\��9�\u0014}�'\u0003�,����\u0002\u0015;�T�������`\u001C բ祉\u001A�M���g!gs���\u000F=�'�\u000B\u0000�\u0006��",
-  "name": "Ionescu",
-  "city": "Arad",
-  "price": "100",
-  "workingHours": "8-17"
-}]
-
+[ {
+  "username" : "doctor1",
+  "password" : "t�XUtXC�,���̐9\to<�\f�/ӈ�^bи��{t\u0012���>�Z~��,q�%����qq�`�(rY����",
+  "name" : "Ionescu Andrei",
+  "city" : "Timisoara",
+  "price" : "150",
+  "workingHours" : "8-17"
+}, {
+  "username" : "doctor2",
+  "password" : "\u0016�1\\������\u001A99_R\u001D��b\u001Dx��1�`����(L��\u0007��3ԭ�0��ɲ�1�f�H\u0006���\u0013��9BH�",
+  "name" : "Popescu Ion",
+  "city" : "Arad",
+  "price" : "150",
+  "workingHours" : "8-17"
+}, {
+  "username" : "doctor3",
+  "password" : "zJ\\��9�\u0014}�'\u0003�,����\u0002\u0015;�T�������`\u001C բ祉\u001A�M���g!gs���\u000F=�'�\u000B\u0000�\u0006��",
+  "name" : "Vasilescu Ana",
+  "city" : "Cluj-Napoca",
+  "price" : "150",
+  "workingHours" : "8-17"
+} ]

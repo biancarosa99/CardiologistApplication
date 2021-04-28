@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import model.Appointment;
+import model.ConfirmAppointment;
+import model.DoctorsAppointments;
 import model.DoctorsName;
 
 import java.io.IOException;
@@ -29,6 +31,7 @@ public class ChooseNameAppointmentEventHandler implements EventHandler<ActionEve
 
             DoctorsName doctorsName= new DoctorsName();
 
+           // DoctorsAppointments doctorsAppointments=new DoctorsAppointments();
             Appointment appointment=new Appointment("","");
 
             doctorsName.setDoctorName(((Button)event.getTarget()).getText());
