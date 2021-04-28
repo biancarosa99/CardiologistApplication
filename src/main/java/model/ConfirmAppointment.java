@@ -33,16 +33,16 @@ public class ConfirmAppointment {
         this.appointmentList = appointmentList;
     }
 
-    /*public boolean equals(Object object) {
+    public boolean equals(Object object) {
         if(object==this)
             return true;
 
-        if(!(object instanceof Order))
+        if(!(object instanceof ConfirmAppointment))
             return false;
 
-        Order order=(Order) object;
-        return this.shopName.equals(order.shopName) && this.productList.equals(order.productList);
-    }*/
+        ConfirmAppointment confirmAppointment=(ConfirmAppointment) object;
+        return this.doctorName.equals(confirmAppointment.doctorName) && this.appointmentList.equals(confirmAppointment.appointmentList);
+    }
 
 
 }
