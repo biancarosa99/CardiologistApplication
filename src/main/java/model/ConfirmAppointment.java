@@ -7,21 +7,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConfirmAppointment {
-    private String doctorName;
+    private List<DoctorsName> doctorName=new ArrayList<>();
     private List<Appointment> appointmentList=new ArrayList<Appointment>();
 
     public ConfirmAppointment() {}
 
-    public ConfirmAppointment(Text doctorName, List<Appointment> appointmentList) {
-        this.doctorName=doctorName.getText();
+    public ConfirmAppointment(List<DoctorsName> doctorName,List <Appointment> appointmentList)
+    {
+        this.doctorName.addAll(doctorName);
         this.appointmentList.addAll(appointmentList);
+
     }
 
-    public String getDoctorName() {
+    public List<DoctorsName> getDoctorName() {
         return this.doctorName;
     }
 
-    public void setDoctorName(String doctorName) {
+    public void setDoctorName(List<DoctorsName> doctorName) {
         this.doctorName = doctorName;
     }
 

@@ -19,4 +19,11 @@
   "city" : "Cluj-Napoca",
   "price" : "150",
   "workingHours" : "8-17"
+}, {
+  "username" : "Doctor",
+  "password" : "ؾ鮬QG�|7b��i�3�\u0004X�}��e��\u0010�Vf\u0012mrU����K�8�g6��A3\u001Fa\u0011\u0016t�g\u0012�oͩ{�'I",
+  "name" : "Yasmina Bocereg",
+  "city" : "Timisoara",
+  "price" : "250",
+  "workingHours" : "8:00-16:00"
 } ]

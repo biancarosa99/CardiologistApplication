@@ -15,6 +15,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Appointment;
 import model.ConfirmAppointment;
+import model.Doctor;
+import model.DoctorsName;
 import service.AppointmentService;
 
 import java.io.IOException;
@@ -40,7 +42,7 @@ public class ConfirmAppointmentController <prList>{
         window.show();
     }
 
-    public void init(List<Appointment> app, Text currentDoctor){
+    public void init(List<Appointment> app, List<DoctorsName> currentDoctor){
 
         ObservableList<Appointment> data = FXCollections.observableArrayList(app);
         table.setEditable(true);

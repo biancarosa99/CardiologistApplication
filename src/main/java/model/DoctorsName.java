@@ -4,7 +4,17 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class DoctorsName {
-    private StringProperty doctorsName = new SimpleStringProperty("");;
+    private StringProperty doctorsName = new SimpleStringProperty("");
+
+    public  DoctorsName()
+    {
+
+    }
+
+
+    public DoctorsName(String doctorsName) {
+        this.doctorsName = new SimpleStringProperty(doctorsName);
+    }
 
     public String getDoctorsName() { return doctorsName.get(); }
 

@@ -1,7 +1,9 @@
 {
-  "doctorName" : "Popescu Mihai",
+  "doctorName" : [ {
+    "doctorsName" : "Ionescu Andrei"
+  } ],
   "appointmentList" : [ {
-    "date" : "28.06.2021",
-    "hour" : "16:00"
+    "date" : "18.09.2021 ",
+    "hour" : "15:00"
   } ]
 }

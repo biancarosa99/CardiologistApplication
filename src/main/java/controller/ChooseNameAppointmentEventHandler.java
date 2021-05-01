@@ -28,15 +28,13 @@ public class ChooseNameAppointmentEventHandler implements EventHandler<ActionEve
             window.setScene(view2);
 
             ViewDoctorAppointmentsController controller = loader.getController();
+            ViewDoctorAppointmentsController controller2 =loader.getController();
 
             DoctorsName doctorsName= new DoctorsName();
-
-           // DoctorsAppointments doctorsAppointments=new DoctorsAppointments();
             Appointment appointment=new Appointment("","");
 
-            doctorsName.setDoctorName(((Button)event.getTarget()).getText());
-
             controller.init(appointment);
+            controller2.initTable(doctorsName);
 
             window.show();
         } catch (IOException ex){

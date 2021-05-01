@@ -33,13 +33,41 @@ public class ViewDoctorAppointmentsController {
     public javafx.scene.control.TableColumn<DoctorsAppointments, String> prDate;
     public javafx.scene.control.TableColumn<DoctorsAppointments, String> prHour;
 
-
+    public TableView<DoctorsName> table1;
+    public javafx.scene.control.TableColumn<DoctorsName, String> prName;
 
     private JsonParser jsonParser;
 
+    public void initTable(DoctorsName doctorsName)
+    {
+        try{
+            jsonParser = new JsonParser();
+            org.json.simple.JSONObject obj = jsonParser.parse("/datastorage/appointments.json");
+            JSONArray doctor = (JSONArray) obj.get("doctorName");
+            Iterator<Object> it = doctor.iterator();
+
+            List<DoctorsName> prList = new ArrayList<DoctorsName>();
+
+            while (it.hasNext()) {
+                JSONObject getDoctorName = (JSONObject) it.next();
+                prList.add(new DoctorsName(getDoctorName.get("doctorsName").toString()));
+
+            }
+
+            ObservableList<DoctorsName> data = FXCollections.observableArrayList(prList);
+            table.setEditable(true);
+            prName.setCellValueFactory(new PropertyValueFactory<>("doctorsName"));
+
+            table1.setItems(data);
+
+
+        }catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void init(Appointment appointment)
     {
-
         try {
 
             jsonParser = new JsonParser();
@@ -54,7 +82,6 @@ public class ViewDoctorAppointmentsController {
                 JSONObject getDoctorSchedule = (JSONObject) it.next();
                 prList.add(new Appointment(getDoctorSchedule.get("date").toString(), (String) getDoctorSchedule.get("hour")));
 
-
             }
 
             ObservableList<Appointment> data = FXCollections.observableArrayList(prList);
@@ -62,10 +89,6 @@ public class ViewDoctorAppointmentsController {
             prDate.setCellValueFactory(new PropertyValueFactory<>("date"));
             prHour.setCellValueFactory(new PropertyValueFactory<>("hour"));
 
-
-
-
-           // table.setEditable(true);
             table.setItems(data);
             table.setEditable(true);
 

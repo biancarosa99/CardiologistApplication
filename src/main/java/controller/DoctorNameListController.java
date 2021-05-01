@@ -40,6 +40,7 @@ public class DoctorNameListController {
     public TableColumn prSelect;
 
     List<Appointment> appointments = new ArrayList<>();
+    List <DoctorsName> currentDoctors = new ArrayList<>();
 
     private JsonParser jsonParser;
 
@@ -52,7 +53,7 @@ public class DoctorNameListController {
 
         window.setScene(view2);
         ConfirmAppointmentController controller = loader.getController();
-        controller.init(this.appointments, this.currentDoctor);
+        controller.init(this.appointments, this.currentDoctors);
         window.show();
     }
 
@@ -71,6 +72,7 @@ public class DoctorNameListController {
     public void init(DoctorsName doctorsName)
     {
         currentDoctor.setText(doctorsName.getDoctorsName());
+        currentDoctors.add(doctorsName);
         try {
             jsonParser = new JsonParser();
             org.json.simple.JSONObject obj = jsonParser.parse("/datastorage/doctorsSchedule.json");
