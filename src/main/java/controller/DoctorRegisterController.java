@@ -33,7 +33,7 @@ public class DoctorRegisterController {
     @FXML
     private TextField workingHoursField;
     @FXML
-    private Text messageField;
+    public Text messageField;
 
     public DoctorRegisterController() {
 

@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class DoctorService {
-    private static List<Doctor> doctors = new ArrayList<Doctor>();
+    public static List<Doctor> doctors = new ArrayList<Doctor>();
 
     public static void loadDoctorsFromFile() {
         try {
@@ -92,7 +92,7 @@ public class DoctorService {
         }
     }
 
-    static void checkUsernameIsNotEmpty(String username)throws EmptyUsernameException {
+     static void checkUsernameIsNotEmpty(String username)throws EmptyUsernameException {
 
         if(Objects.equals(username, ""))
             throw new EmptyUsernameException(username);
@@ -129,7 +129,7 @@ public class DoctorService {
     }
 
 
-    private static String encodePassword(String salt, String password) {
+    public static String encodePassword(String salt, String password) {
 
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));
@@ -141,7 +141,9 @@ public class DoctorService {
                 .replace("\"", ""); //to be able to save in JSON format
     }
 
-
+    public static List<Doctor> getDoctors() {
+        return doctors;
+    }
 
     private static MessageDigest getMessageDigest() {
 

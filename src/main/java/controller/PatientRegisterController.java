@@ -26,7 +26,7 @@ public class PatientRegisterController {
     @FXML
     private PasswordField passwordField;
     @FXML
-    private Text messageField;
+    public Text messageField;
 
     @FXML
     public void goToPatientLogin(ActionEvent event) throws IOException {

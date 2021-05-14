@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import exceptions.*;
+import model.Doctor;
 import model.Patient;
 
 import java.io.*;
@@ -15,7 +16,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class PatientService {
-    private static List<Patient> patients=new ArrayList<Patient>();
+    public static List<Patient> patients=new ArrayList<Patient>();
 
     public static void loadPatientsFromFile() {
         try {
@@ -102,7 +103,7 @@ public class PatientService {
 
    // }
 
-    private static String encodePassword(String salt, String password) {
+    public static String encodePassword(String salt, String password) {
 
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));
@@ -112,6 +113,10 @@ public class PatientService {
         // This is the way a password should be encoded when checking the credentials
         return new String(hashedPassword, StandardCharsets.UTF_8)
                 .replace("\"", ""); //to be able to save in JSON format
+    }
+
+    public static List<Patient> getPatients() {
+        return patients;
     }
 
     private static MessageDigest getMessageDigest() {

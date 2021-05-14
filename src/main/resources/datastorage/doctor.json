@@ -26,4 +26,18 @@
   "city" : "Timisoara",
   "price" : "250",
   "workingHours" : "8:00-16:00"
+}, {
+  "username" : "doctor_popescu",
+  "password" : ".��� 4\u0018X�\u0002���;��(� �6�<G\\\u001B�q���\u0010!зC\u0012�E:�\u0000$D�\u0018�\u001E\u0000���\u0006_\u0001�>���RzCY",
+  "name" : "Popescu Andreea",
+  "city" : "Timisoara",
+  "price" : "250",
+  "workingHours" : "8:00-17:00"
+}, {
+  "username" : "doctor_popescu_andreea",
+  "password" : "\u0011���\u001Aa��x06J\u000F�\u001F\u0018�M��Y\u0002\u0012 \u0014�%�s����Ӱ�]��j]�dCޑ_Ǡݼ\u0016\u0001�p%�.8�X2",
+  "name" : "Popescu Andreea",
+  "city" : "Timisoara",
+  "price" : "250",
+  "workingHours" : "8:00-17:00"
 } ]
